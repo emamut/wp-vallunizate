@@ -14400,16 +14400,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '#app',
-  data: {
-    menuArray: []
-  },
-  mounted: function mounted() {
-    var self = this;
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(siteURL + '/wp-json/wp/v2/menu').then(function (response) {
-      self.menuArray = response.data;
-    });
-  }
+  el: '#app'
 });
 
 /***/ }),
