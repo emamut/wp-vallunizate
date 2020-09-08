@@ -20,6 +20,14 @@ function get_menu($request)
   {
     $post->prize = get_field('precio', $post->ID);
     $post->post_image = get_the_post_thumbnail_url($post->ID);
+    $post->categories = array();
+
+    $post_categories = wp_get_post_categories( $post->ID );
+
+    foreach($post_categories as $category_id) {
+      $cat = get_category( $category_id );
+      $post->categories[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
+    }
   }
 
   return $post_array;
