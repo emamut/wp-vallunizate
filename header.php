@@ -10,3 +10,4 @@
   </head>
   <body>
     <div id="app" v-cloak>
+      <?php get_template_part( 'partials/menu', 'template' ); ?>

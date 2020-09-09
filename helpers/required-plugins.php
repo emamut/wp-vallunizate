@@ -8,6 +8,11 @@ function my_theme_register_required_plugins()
   $plugins = array(
 
     array(
+      'name'      => 'Custom Post Type Maker',
+      'slug'      => 'custom-post-type-maker',
+      'required'  => true
+    ),
+    array(
       'name'      => 'Advanced Custom Fields',
       'slug'      => 'advanced-custom-fields',
       'required'  => true
