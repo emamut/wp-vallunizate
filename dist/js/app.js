@@ -2037,7 +2037,7 @@ __webpack_require__.r(__webpack_exports__);
       this.orderArray.forEach(function (orderItem) {
         temp += orderItem.name + ' X ' + orderItem.quantity + '\n';
       });
-      window.location = 'https://wa.me/593999660044?text=' + encodeURIComponent("".concat(temp, " \n *TOTAL: $ ").concat(this.$parent.sumOrder, "* \n A continuaci\xF3n mi direcci\xF3n para la entrega:\n "));
+      window.location = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent("".concat(temp, " \n *TOTAL: $ ").concat(this.$parent.sumOrder, "* \n A continuaci\xF3n mi direcci\xF3n para la entrega:\n "));
     }
   }
 });
