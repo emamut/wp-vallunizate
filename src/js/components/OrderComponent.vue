@@ -42,7 +42,9 @@ export default {
       });
 
       window.location =
-        'https://wa.me/593999660044?text=' +
+        'https://wa.me/' +
+        whatsappNumber +
+        '?text=' +
         encodeURIComponent(
           `${temp} \n *TOTAL: $ ${this.$parent.sumOrder}* \n A continuación mi dirección para la entrega:\n `
         );
