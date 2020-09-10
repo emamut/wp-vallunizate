@@ -14708,17 +14708,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('card-component', __webpack_require__(/*! ./components/CardComponent.vue */ "./src/js/components/CardComponent.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.filter('currency', function (value) {
-  var val = (value / 1).toFixed(0).replace('.', ',');
-  return '$ ' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-});
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: function data() {
     return {
       menuArray: [],
-      orderArray: [],
-      hideOrder: true
+      orderArray: []
     };
   },
   mounted: function mounted() {
@@ -14726,21 +14721,6 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(siteURL + '/wp-json/menu/v1/get').then(function (response) {
       self.menuArray = response.data;
     });
-  },
-  methods: {
-    enableOrder: function enableOrder() {
-      if (this.orderArray.length == 0) return 'opacity-50 cursor-not-allowed';
-    },
-    displayOrder: function displayOrder() {
-      return this.hideOrder ? 'hidden' : 'block';
-    },
-    sendOrder: function sendOrder() {
-      var temp = '!Hola! Mi pedido es el siguiente: \n';
-      this.orderArray.forEach(function (orderItem) {
-        temp += orderItem.item.post_title + ' X ' + orderItem.quantity + '\n';
-      });
-      window.location = 'https://wa.me/593999660044?text=' + encodeURIComponent(temp + '\n A continuación mi dirección para la entrega:\n ');
-    }
   }
 });
 
