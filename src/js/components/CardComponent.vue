@@ -56,11 +56,22 @@ export default {
   },
   methods: {
     addToOrder: function(item, key) {
-      if (this.numOrders[key] > 0)
-        this.$parent.orderArray.push({
-          item: item,
-          quantity: this.numOrders[key],
-        });
+      let search = this.$parent.orderArray.findIndex((e) => e.id == item.ID);
+
+      if (search == -1) {
+        if (this.numOrders[key] > 0)
+          this.$parent.orderArray.push({
+            id: item.ID,
+            name: item.post_title,
+            prize: item.prize,
+            quantity: this.numOrders[key],
+          });
+      } else this.$parent.orderArray[search].quantity = this.numOrders[key];
+
+      this.$parent.sumOrder = this.$parent.orderArray.reduce(
+        (accum, item) => accum + item.prize * item.quantity,
+        0
+      );
     },
   },
 };

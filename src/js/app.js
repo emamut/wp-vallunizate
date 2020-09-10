@@ -6,6 +6,11 @@ Vue.component(
   require('./components/CardComponent.vue').default
 );
 
+Vue.component(
+  'order-component',
+  require('./components/OrderComponent.vue').default
+);
+
 Vue.filter('currency', function(value) {
   let val = (value / 1).toFixed(0).replace('.', ',');
   return '$ ' + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -17,6 +22,7 @@ const app = new Vue({
     return {
       menuArray: [],
       orderArray: [],
+      sumOrder: 0,
       hideOrder: true,
     };
   },
@@ -29,22 +35,6 @@ const app = new Vue({
   methods: {
     enableOrder: function() {
       if (this.orderArray.length == 0) return 'opacity-50 cursor-not-allowed';
-    },
-    displayOrder: function() {
-      return this.hideOrder ? 'hidden' : 'block';
-    },
-    sendOrder: function() {
-      let temp = '!Hola! Mi pedido es el siguiente: \n';
-
-      this.orderArray.forEach(function(orderItem) {
-        temp += orderItem.item.post_title + ' X ' + orderItem.quantity + '\n';
-      });
-
-      window.location =
-        'https://wa.me/593999660044?text=' +
-        encodeURIComponent(
-          temp + '\n A continuación mi dirección para la entrega:\n '
-        );
     },
   },
 });
