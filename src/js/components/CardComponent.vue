@@ -21,7 +21,7 @@
       </div>
       <div class="flex items-center">
         <p class="text-orange-700 font-bold leading-none text-xl">
-          Valor: ${{ item.prize }} <small>por unidad</small>
+          Valor: {{ item.prize | currency }} <small>por unidad</small>
         </p>
         <input
           type="number"
@@ -32,7 +32,7 @@
           placeholder="0"
         />
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold ml-3 px-4 rounded"
+          class="bg-green-500 hover:bg-green-700 text-white font-bold ml-3 px-4 rounded"
           @click="addToOrder(item, arrayKey)"
         >
           Añadir al carrito
