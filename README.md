@@ -8,6 +8,6 @@ Plantilla para Wordpress con [TailwindCSS](https://tailwindcss.com/), [VueJS](ht
 - Ejecuta el comando dentro de la carpeta clonada: `yarn` o `npm install`
 - Ejecuta `yarn watch` o `npm run watch` para ver tus cambios en `http://localhost:3000`
 - Instala los plugins necesarios
-- Si quieres el contenido de prueba, importa el archivo `vallunizte.WordPress.2020-09-10.xml` que se encuentra en la raíz de la carpeta clonada
+- Si quieres el contenido de prueba, importa el archivo `vallunizte.WordPress.2020-09-10.xml` que se encuentra en la raíz de la carpeta clonada.
 
-Puedes contactarme en Twitter como [@e_mamut](https://twitter.com/e_mamut)
+Basado en [PencyApp](https://web.pency.app/). Puedes contactarme en Twitter como [@e_mamut](https://twitter.com/e_mamut)
